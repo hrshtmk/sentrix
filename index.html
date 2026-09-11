@@ -1,0 +1,70 @@
+<!--
+============================================================================
+@file      index.html
+@brief     Main UI overlay dashboard and Cesium map viewer interface.
+
+@project   Smart India Hackathon 2026
+@problem   SIH26007
+@team      Sigma6
+@author    Harshit Mukhedkar
+@date      2026-09-11
+============================================================================
+-->
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SENTRIX - Sigma6</title>
+
+  <!-- External Stylesheets & Fonts -->
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.118/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Local Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- CesiumJS Library -->
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.118/Build/Cesium/Cesium.js"></script>
+</head>
+<body>
+
+  <!-- Map Render Surface Container -->
+  <div id="cesiumContainer"></div>
+
+  <!-- Dashboard Panel Overlay -->
+  <div id="dashboard">
+    <div class="dash-header">
+      <div class="dash-title">SENTRIX v1b - SIGMA6</div>
+      <div id="wasmBadge" class="status-badge disabled">
+        <div class="pulse-dot"></div>
+        <span>WASM Initializing</span>
+      </div>
+    </div>
+
+    <div class="toggle-bar">
+      <span>Anti Collision Engine</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="systemToggle" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <button id="resetBtn" class="reset-btn">&#8635; Reset Simulation</button>
+
+    <div id="truckList"></div>
+
+    <div class="log-title">Event Loggers</div>
+    <div id="eventLog"></div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="config.js"></script>
+  <script src="utils.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
